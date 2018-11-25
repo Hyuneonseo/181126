@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<script src="paper.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans|Noto+Sans+KR" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Heebo|Hind+Madurai|Hind+Siliguri|Nunito+Sans|Yantramanav" rel="stylesheet">
+	<title>땋은머리.번역투</title>
+	<style>
+		@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+		a:link, a:active, a:visited{text-decoration: none; }
+        a:link, a:active, a:visited{color: black;}
+
+		#changepage{position: fixed; top: 735px; left: -135px; width: 300px; height: 20px; background: #f3ff00; font-weight: bolder; text-align: left; font-size: 1.2em; transform: rotate(-90deg);}
+		a #changepage:hover{background: black; color: #f3ff00;}
+		.tophead{margin: auto; width: 1500px; height: 130px; border: 1px solid black; font-family:'Noto Sans KR', '맑은 고딕', '돋움';}
+		#tphd1{background: #f3ff00; float: right; width: 450px; height: 20px; font-weight: bolder; text-align: right; font-size: 1.1em;}
+		#tphd2{position: relative; top: 29px; border: 1px solid black; width: 500px; height: 100px; font-weight: bolder; font-size: 4em; }
+		#tphd3{position: relative; top: -73px; left: 1000px; border: 1px solid black; width: 500px; height: 100px; font-weight: bolder; font-size: 4em; text-align: right;}
+		.midcon{margin: auto; width: 1500px; height: 750px; border: 1px solid black; font-family:'Noto Sans KR', '맑은 고딕', '돋움';}
+		#midcon1{margin: auto; width: 1500px; height: 10px; background: black;}
+		#midcon2{margin: auto; width: 1500px; height: 10px; background: black; top: 730px; position: relative;}
+		#midcon3{margin: auto; width: 10px; height: 750px; background: black; top: -20px; position: relative;}
+		#midcon4{position: relative; border: 1px solid red; width: 585px; height: 570px; top: -760px; left: 0px; text-align: left; font-size: 2em; font-weight: bolder; line-height: 1.7em; overflow: auto; padding: 80px;}
+		#midcon4:hover{color: white;}
+		#midcon5{position: relative; background: black; width: 745px; height: 732px; top: -1492px; left: 755px; overflow: hidden;}
+		#midcon6{position: absolute; top: 0px; left: 0px;}
+		#midcon7{position: relative; overflow: hidden; width: 745px; height: 772px; display: none;}
+		#midcon7 img{width: 745px; height: 732px; }
+		.botind{margin: auto; width: 1500px; height: 150px; border: 1px solid black; font-family:'Noto Sans KR', '맑은 고딕', '돋움'; overflow: hidden;}
+		#botind1{width: 1500px; height: 3px; background: black; top: 17px; position: relative;}
+		#botind2{width: 1500px; height: 3px; background: black; top: 128px; position: relative;}
+		#botind3{position: relative; width: 170px; height: 60px; top: 38px; border: 1px solid black; font-weight: bolder; font-size: 4em; line-height: 55px; background: white;}
+		#botind3:hover{background: #f3ff00;}
+		#botind4{width: 110px; height: 112px; border: 1px solid black; float: right; position: relative; top: -173px; text-align: center;}
+		#botind5{width: 110px; height: 112px; border: 1px solid black; float: right; position: relative; top: -173px; text-align: center;}
+		#botind6{width: 110px; height: 112px; border: 1px solid black; float: right; position: relative; top: -173px; text-align: center;}
+		#botind7{width: 110px; height: 112px; border: 1px solid black; float: right; position: relative; top: -173px; text-align: center;}
+		#botind4 img,#botind5 img,#botind6 img,#botind7 img {height: 110px;}
+
+		#botind8{height:20px; position: relative; width: 300px; height: 60px; top: -148px; border: 1px solid black; font-weight: bolder; font-size: 4.6em; line-height: 65px; background: white; left: 751px; font-family: 'Yantramanav', sans-serif; cursor: pointer; text-align: right;}
+		#botind8:hover{background: #f3ff00;}
+		#botind9{position: relative; width: 320px; height: 60px; top: -24px; left: 170px; border: 1px solid black; font-weight: bolder; font-size: 4em; line-height: 55px; background: blue; cursor: pointer;}
+		#botind10{position: relative; width: 320px; height: 60px; top: -86px; left: 490px; border: 1px solid black; font-weight: bolder; font-size: 4em; line-height: 55px; background: red; cursor: pointer;}	
+
+		.drag1,.drag2,.drag3{position: relative;
+			  top: -740px;
+			  left: 10px;
+			  width:2px;
+			  height:230px;
+			  border-radius: 50%;
+			  background: red;
+			  z-index:100000;
+			  margin-top:10px;
+			}
+		.drag1 img,.drag2 img,.drag3 img{width: 40px; height: 60px;}		
+	</style>
+	</head>
+	<body>
+
+		<a href="idk.html"><div id="changepage">느낌표에서 시작된 문장부호 페이지</div></a>
+		<div class="tophead">
+			<div id="tphd1">
+				- 드래그 하면 설명이 나오게? 설명아니어도 어떤 문장 나오게
+			</div>
+			<div id="tphd2">
+				< <a href="idk2.html" style="color: green;">1</a> , <a href="idk4.html">2</a> , 3 , 4 >
+			</div>
+			<div id="tphd3">
+				번역투 문장
+			</div>
+		</div>	
+		<div class="midcon">
+			<div id="midcon1"></div>
+			<div id="midcon2"></div>
+			<div id="midcon3"></div>
+			<div id="midcon4">
+				점순은 쌈을 다시 <a href="dongtext.png">입었음에 틀림없다.</a> 기운을 차리<a href="dongtext.png">기 위해</a> 그런 일을 했을 거예요. 나는 왜 그 늙은 남자의 소녀가 성 안으로 들어가 나를 먹을 수 없다고 말하는지 모르겠다.<br><br>
+				4일전에 나는 <a href="dongtext.png">감자 케이스</a>에 아무런 문제가 없었다. 여자가 야채를 가지러 갈 때, 남쪽 울타리에서 뜨개질을 <a href="dongtext.png">하는 이유는 무엇인가?</a> 발소리를 듣고 돌아왔어요<br><br>
+				"야! 너 혼자 일하니?"
+				<a href="dongtext.png">그것은</a> 아슬아슬한 속임수<a href="dongtext.png">이다.</a>
+				어제까지만 해도 저와 제가 말을 잘 하지 못했으며, 서로를 <a href="dongtext.png">만났음에도 불구하고</a> 그렇게 정중<a href="dongtext.png">했던 것도 당연합니다.</a> 넌 그냥 개자식이야....<br><br>
+				"그럼 혼자 해?"
+				지금 내가 이렇게 말하고 있으니
+				"일 잘하세요?"
+				아니면
+				"한여름에, <a href="dongtext.png">당신은 이미</a> 울타리를 가지고 <a href="dongtext.png">있나요?</a>"
+				그들은 듣는 <a href="dongtext.png">것에 대한 두려움 때문에</a> 입을 다물기 위해 손을 사용합니다. 별로 재미있지는 않지만 날씨가 개었을 때, 나는 이 어린 소녀가 미쳤다고 생각했다.
+				
+			</div>
+			<div id="midcon5">
+				<div id="midcon7">
+					<img src="grid4.png">
+				</div>
+				
+				<div id="midcon6">
+					<canvas id="myCanvas" style="width:745px; height:732px;"></canvas>
+				</div>	
+
+				<div class="drag1">
+		      	</div>
+		      	<div class="drag2">
+		      	</div>
+		      	<div class="drag3">
+		      	</div>		
+			</div>
+		</div>
+		<div class="botind">
+			<div id="botind1"></div>
+			<div id="botind2"></div>
+			<div id="botind3">보기 :</div>
+			<div id="botind9">그리드 켜기</div>
+			<div id="botind10">그리드 끄기</div>
+
+			<div id="botind4">
+				<img src="interrobang.png">
+			</div>
+			<div id="botind5">
+				<img src="acclamation.png">
+			</div>
+			<div id="botind6">
+				<img src="conviction.png">
+			</div>
+			<div id="botind7">
+				<img src="authority.png">
+			</div>
+
+			<div id="botind8" onclick="takeScreenShot()">Snapshot</div>
+		</div>
+		
+		
+	</body>
+	<script>
+
+		$(".drag1").draggable();
+		$(".drag2").draggable();
+		$(".drag3").draggable();
+		var takeScreenShot = function() {
+		    html2canvas(document.getElementById("midcon5"), {
+		        onrendered: function (canvas) {
+		            var tempcanvas=document.createElement('canvas');
+		            tempcanvas.width=745;
+		            tempcanvas.height=732;
+		            var context=tempcanvas.getContext('2d');
+		            context.drawImage(canvas,0,0,745,730,0,0,745,732);
+		            var link=document.createElement("a");
+		            link.href=tempcanvas.toDataURL('image/jpg');   //function blocks CORS
+		            link.download = 'screenshot.jpg';
+		            link.click();
+		        }
+		    });
+		}
+
+		botind9.onclick = function(){
+			document.getElementById("midcon7").style.display = 'inline';
+		}
+		botind10.onclick = function(){
+			document.getElementById("midcon7").style.display = 'none';
+		}
+	</script>
+	<script type="text/paperscript" canvas="myCanvas">
+			var values = {
+				paths: 50,
+				minPoints: 5,
+				maxPoints: 15,
+				minRadius: 30,
+				maxRadius: 90
+			};
+
+			var hitOptions = {
+				segments: true,
+				stroke: true,
+				fill: true,
+				tolerance: 5
+			};
+
+			createPaths();
+
+			function createPaths() {
+				var radiusDelta = values.maxRadius - values.minRadius;
+				var pointsDelta = values.maxPoints - values.minPoints;
+				for (var i = 0; i < values.paths; i++) {
+					var radius = values.minRadius + Math.random() * radiusDelta;
+					var points = values.minPoints + Math.floor(Math.random() * pointsDelta);
+					var path = createBlob(view.size * Point.random(), radius, points);
+					var lightness = (Math.random() - 0.5) * 0.4 + 0.4;
+					var hue = Math.random() * 360;
+					path.fillColor = 'white';
+					path.strokeColor = 'black';
+				};
+			}
+
+			function createBlob(center, maxRadius, points) {
+				var path = new Path();
+				path.closed = true;
+				for (var i = 0; i < points; i++) {
+					var delta = new Point({
+						length: (maxRadius * 0.5) + (Math.random() * maxRadius * 0.5),
+						angle: (360 / points) * i
+					});
+					path.add(center + delta);
+				}
+				path.smooth();
+				return path;
+			}
+
+			var segment, path;
+			var movePath = false;
+			function onMouseDown(event) {
+				segment = path = null;
+				var hitResult = project.hitTest(event.point, hitOptions);
+				if (!hitResult)
+					return;
+
+				if (event.modifiers.shift) {
+					if (hitResult.type == 'segment') {
+						hitResult.segment.remove();
+					};
+					return;
+				}
+
+				if (hitResult) {
+					path = hitResult.item;
+					if (hitResult.type == 'segment') {
+						segment = hitResult.segment;
+					} else if (hitResult.type == 'stroke') {
+						var location = hitResult.location;
+						segment = path.insert(location.index + 1, event.point);
+						path.smooth();
+					}
+				}
+				movePath = hitResult.type == 'fill';
+				if (movePath)
+					project.activeLayer.addChild(hitResult.item);
+			}
+
+			function onMouseMove(event) {
+				project.activeLayer.selected = false;
+				if (event.item)
+					event.item.selected = true;
+			}
+
+			function onMouseDrag(event) {
+				if (segment) {
+					segment.point += event.delta;
+					path.smooth();
+				} else if (path) {
+					path.position += event.delta;
+				}
+			}
+		</script>
+</html>

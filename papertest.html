@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="paper.js"></script>
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+		<script>
+			
+		    var _gaq = _gaq || [];
+		    _gaq.push(['_setAccount', 'UA-10082945-6']);
+		    _gaq.push(['_trackPageview']);
+		    (function() {
+		      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		    })();
+  
+		</script>
+		<title>기말레이아웃1</title>
+		<style type="text/css">
+			*{margin: auto; text-align: center; position: absolute; margin-left: 30px;}
+			
+		</style>
+	</head>
+	<body class="fullscreen">
+		<img src=".png">
+		
+		
+    	<canvas id="myCanvas" style="width:800px; height:500px;"></canvas>
+		<script type="text/paperscript" canvas="myCanvas">
+			
+			words.visible = true; // Turn off the effect of display:none;
+			words.fillColor = null;
+			words.strokeColor = 'black';
+			var yesGroup = words.children.yes;
+
+			var noGroup = words.children.no;
+			// Resize the words to fit snugly inside the view:
+			words.fitBounds(view.bounds);
+			words.scale(0.8);
+
+			yesGroup.position = view.center;
+			noGroup.position = [-900, -900];
+
+			function onMouseMove(event) {
+			    noGroup.position = event.point;
+			    for (var i = 0; i < yesGroup.children.length; i++) {
+			        for (var j = 0; j < noGroup.children.length; j++) {
+			            showIntersections(noGroup.children[j], yesGroup.children[i])
+			        }
+			    }
+			}
+
+			function showIntersections(path1, path2) {
+			    var intersections = path1.getIntersections(path2);
+			    for (var i = 0; i < intersections.length; i++) {
+			        new Path.Circle({
+			            center: intersections[i].point,
+			            radius: 5,
+			            fillColor: '#009dec'
+			        }).removeOnMove();
+			    }
+			}
+		</script>
+		</div>
+	</body>
+	</html>
